@@ -23,6 +23,7 @@ void heapify(int arr[], int n, int i) {
         swap(arr[i], arr[largest]); // Swap
         heapify(arr, n, largest);   // Recursively heapify the affected sub-tree
     }
+    
 }
 
 // Function to build a max heap from the given array
