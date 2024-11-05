@@ -1,0 +1,42 @@
+bool Graph::isCycleUtil(int v, bool visited[], bool restack[])
+{
+    if(visited[v]==false)
+    {
+        visited[v] = true;
+        restack[v] = true;
+
+        for(int i=0; i<AdjList[v].getLength(); i++)
+        {
+            int u = AdjList[v].getItem(i);
+
+            if(visited[u]==false && isCycleUtil(u, visited, restack)==true)
+                return true;
+            else if(restack[u]==true)
+                return true;
+        }
+    }
+
+    restack[v] = false;
+    return false;
+
+}
+
+bool Graph::isCycle()
+{
+    bool *visited = new bool[nVertices];
+    bool *restack = new bool[nVertices];
+
+    for(int i=0; i<nVertices; i++)
+    {
+        visited[i] = false;
+        restack[i] = false;
+    }
+
+    for(int i=0; i<nVertices; i++)
+    {
+        if(isCycleUtil(i, visited, restack)==true)
+            return true;
+    }
+
+    return false;
+}
