@@ -10,8 +10,7 @@ This repository contains implementations of various **Data Structures** and **Al
 - [Algorithms](#algorithms)
 - [Programming Languages](#programming-languages)
 - [How to Use](#how-to-use)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Introduction
 
